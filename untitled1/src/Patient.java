@@ -1,22 +1,11 @@
-public class Patient {
-    private String name;
+public class Patient extends Person {
     private int age;
     private String ailment;
 
-    // Constructor
     public Patient(String name, int age, String ailment) {
-        this.name = name;
+        super(name);
         this.age = age;
         this.ailment = ailment;
-    }
-
-    // Getters and Setters
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getAge() {
@@ -35,10 +24,14 @@ public class Patient {
         this.ailment = ailment;
     }
 
-    // Method to display details
+    @Override
     public void displayDetails() {
-        System.out.println("Patient Name: " + name);
-        System.out.println("Age: " + age);
-        System.out.println("Ailment: " + ailment);
+        System.out.println("Patient Details:");
+        System.out.println(toString());
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", Age: " + age + ", Ailment: " + ailment;
     }
 }

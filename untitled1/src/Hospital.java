@@ -1,33 +1,36 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Hospital {
     private String name;
     private String location;
+    private List<Patient> patients;
 
-    // Constructor
     public Hospital(String name, String location) {
         this.name = name;
         this.location = location;
+        this.patients = new ArrayList<>();
     }
 
-    // Getters and Setters
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void addPatient(Patient patient) {
+        patients.add(patient);
     }
 
-    // Method to display details
     public void displayDetails() {
-        System.out.println("Hospital Name: " + name);
+        System.out.println("Hospital Details:");
+        System.out.println("Name: " + name);
         System.out.println("Location: " + location);
+        System.out.println("Patients:");
+        for (Patient patient : patients) {
+            System.out.println(" - " + patient.getName());
+        }
     }
 }

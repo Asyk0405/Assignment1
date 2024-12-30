@@ -1,20 +1,9 @@
-public class MedicalProfessional {
-    private String name;
+public class MedicalProfessional extends Person {
     private String specialization;
 
-    // Constructor
     public MedicalProfessional(String name, String specialization) {
-        this.name = name;
+        super(name);
         this.specialization = specialization;
-    }
-
-    // Getters and Setters
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getSpecialization() {
@@ -25,9 +14,14 @@ public class MedicalProfessional {
         this.specialization = specialization;
     }
 
-    // Method to display details
+    @Override
     public void displayDetails() {
-        System.out.println("Medical Professional Name: " + name);
-        System.out.println("Specialization: " + specialization);
+        System.out.println("Medical Professional Details:");
+        System.out.println(toString());
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", Specialization: " + specialization;
     }
 }
